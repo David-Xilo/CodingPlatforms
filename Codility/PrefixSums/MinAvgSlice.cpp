@@ -8,6 +8,9 @@ using namespace std;
 
 int solution(vector<int> &A) {
     // write your code in C++14 (g++ 6.2.0)
+    // as said in the discussion of the problem
+    // the min average slice will have size 2 or 3,
+    // and these are the sizes we must investigate
     int B[A.size()];
     int C[A.size()];
     B[A.size() - 2] = A[A.size() - 2] + A[A.size() - 1];
