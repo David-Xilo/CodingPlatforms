@@ -6,34 +6,36 @@
 
 int solution(vector<int> &A) {
     vector<int> peaks;
-    for(auto i = 1; i < A.size() - 1; ++i){
-        if(A[i] > A[i-1] && A[i] > A[i+1])
+    for (auto i = 1; i < A.size() - 1; ++i) {
+        if (A[i] > A[i - 1] && A[i] > A[i + 1])
             peaks.push_back(i);
     }
     int splits = 0;
-    for(auto j = 1; j < peaks.size(); ++j){
+    for (auto j = 1; j <= peaks.size(); ++j) {
+        if(A.size() % j != 0)
+            continue;
+        
         int sp = j;
         int K = A.size() / sp;
+        int counter = K;
         int begin = 0;
-        
-            bool check = false;
-            for(auto h : peaks){
-                if(h < K && h > begin){
-                    --sp;
-                    if(sp == 0)
-                        break;
-                    begin += K;
-                    K += K;
-                }
-                if(h > K)
+
+
+        for (auto h : peaks) {
+            if (h < K && h >= begin) {
+                --sp;
+                if (sp == 0)
                     break;
+                begin += counter;
+                K += counter;
             }
-            if(sp == 0)
-                splits = j + 1;
-        
+            if (h > K - 1)
+                break;
+        }
+        if (sp == 0)
+            splits = j;
+
     }
-    if(splits == 1 || splits == 0)
-        return 0;
-    
+
     return splits;
 }
