@@ -1,4 +1,4 @@
-import CodingPlatforms.Rosalind.INI.DatasetReader as dsr
+import CodingPlatforms.Rosalind.DatasetReader as dsr
 
 
 def sum_all_odds(beg, end):

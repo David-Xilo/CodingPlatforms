@@ -1,0 +1,14 @@
+from typing import Dict
+
+import CodingPlatforms.Rosalind.DatasetReader as dsr
+
+
+def sequence_reverse_complement(sequence):
+    decoder: Dict[str, str] = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+    return ''.join([decoder[ch] for ch in sequence.strip('\n')[::-1]])
+
+
+file = "rosalind_revc.txt"
+sequence = dsr.file_as_string(file)
+solution = sequence_reverse_complement(sequence)
+dsr.write_answer_to_file("REVC.txt", solution)

@@ -1,4 +1,4 @@
-import CodingPlatforms.Rosalind.INI.DatasetReader as dsr
+import CodingPlatforms.Rosalind.DatasetReader as dsr
 
 
 def get_even_lines_one_based(all_lines):

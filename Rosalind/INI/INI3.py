@@ -1,4 +1,4 @@
-import CodingPlatforms.Rosalind.INI.DatasetReader as dsr
+import CodingPlatforms.Rosalind.DatasetReader as dsr
 
 
 def get_substrings(strg, index_list):
